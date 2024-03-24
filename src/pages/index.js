@@ -1,6 +1,9 @@
 import Header from '../pages/components/Header'; 
 import Hero from '../pages/components/Hero';     
 import ContentGrid from '../pages/components/ContentGrid'; 
+import Footer from '../pages/components/Footer'; 
+
+import { FacebookShare,TwitterShare,WhatsappShare,TelegramShare,EmailShare } from 'react-share-kit'
 
 
 export default function Home() {
@@ -34,6 +37,7 @@ export default function Home() {
         <ContentGrid title="Dinner" emoji="🍲" items={beachItems} />
         {}
       </main>
+      <Footer />
     </div>
   );
 }

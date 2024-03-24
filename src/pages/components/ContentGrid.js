@@ -27,7 +27,7 @@ export default function ContentGrid({ title, emoji, items = [] }) { // Set a def
               <span className="ml-2 text-slate-600 transform rotate-[-45deg] inline-block group-hover:no-underline">→</span>
             </a>
             {/* Full-width underline for each list item */}
-            <div className="absolute bottom-0 left-0 w-full border-b border-gray-300"></div>
+            <div className="absolute bottom-0 left-0 w-full"></div>
           </li>
         ))}
       </ul>
