@@ -7,6 +7,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -16,18 +18,36 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+html, body {
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background-color: white;
+}
+/* Initialize the counter */
+.counter-reset {
+  counter-reset: list-counter;
+}
+
+/* Increment the counter */
+.counter-increment {
+  counter-increment: list-counter;
+}
+
+/* Use the ::before pseudo-element to display the counter */
+.counter-increment .counter::before {
+  content: counter(list-counter) '. ';
+  color: #cbd5e1; /* Slate-300 color */
+  margin-right: 0.5rem; /* Adjust spacing as needed */
+  /* Ensure counters do not interfere with clickability */
+  pointer-events: none;
+}
+
