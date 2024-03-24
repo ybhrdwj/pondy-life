@@ -1,6 +1,12 @@
 // components/ContentGrid.js
 
-export default function ContentGrid({ title, emoji, items }) {
+export default function ContentGrid({ title, emoji, items = [] }) { // Set a default value for items
+  // Check if items is an array and has length before rendering the list
+  if (!Array.isArray(items) || items.length === 0) {
+    // You can return a loading indicator or null if there are no items
+    return <div>Loading...</div>; // Or return null;
+  }
+
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-4">
       <h2 className="flex items-center font-semibold text-lg mb-2 relative">
@@ -12,7 +18,7 @@ export default function ContentGrid({ title, emoji, items }) {
       <ul className="pl-4 counter-reset">
         {items.map((item, index) => (
           <li key={index} className="mb-1 counter-increment group">
-            <a href={item.href} className="flex items-center no-underline" target="_blank">
+            <a href={item.href} className="flex items-center no-underline" target="_blank" rel="noopener noreferrer">
               {/* Counter */}
               <span className="counter text-slate-300 mr-2"></span>
               {/* Text with conditional underline on hover */}
@@ -21,10 +27,15 @@ export default function ContentGrid({ title, emoji, items }) {
               <span className="ml-2 text-slate-600 transform rotate-[-45deg] inline-block group-hover:no-underline">→</span>
             </a>
             {/* Full-width underline for each list item */}
-            <div className="absolute bottom-0 left-0 w-full "></div>
+            <div className="absolute bottom-0 left-0 w-full border-b border-gray-300"></div>
           </li>
         ))}
       </ul>
     </div>
   );
 }
+
+// Define default props in case they are not provided
+ContentGrid.defaultProps = {
+  items: [], // Default to an empty array
+};
