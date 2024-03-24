@@ -1,4 +1,4 @@
-import { FacebookShare,TwitterShare,WhatsappShare,TelegramShare,EmailShare } from 'react-share-kit'
+import { FacebookShare,TwitterShare,WhatsappShare,TelegramShare,EmailShare } from 'react-share-kit/dist/index.es'
 
 const Hero = () => {
   const shareUrl = 'https://pondy.life';
