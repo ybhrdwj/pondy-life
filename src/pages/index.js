@@ -24,7 +24,7 @@ export default function Home() {
     <div>
       <Header />
       <Hero />
-      <main className="bg-white max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+      <main className="bg-white max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
         <ContentGrid title="Beaches" emoji="⛱️" items={beachItems} />
         <ContentGrid title="AirBnB" emoji="🛖" items={beachItems} />
         <ContentGrid title="Bike Rentals" emoji="🛵" items={beachItems} />

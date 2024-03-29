@@ -8,23 +8,23 @@ export default function ContentGrid({ title, emoji, items = [] }) { // Set a def
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4">
+    <div className="bg-white border border-gray-200 rounded-lg">
       <h2 className="flex items-center font-semibold text-lg mb-2 relative">
-        <span>{emoji}</span>
-        <span className="ml-2 text-slate-700">{title}</span>
+        <span className="pl-3">{emoji}</span>
+        <span className="ml-2 text-slate-700 p-2 text-base">{title}</span>
         {/* Absolute-positioned full-width underline for the heading */}
         <div className="absolute bottom-0 left-0 w-full border-b border-gray-300"></div>
       </h2>
-      <ul className="pl-4 counter-reset">
+      <ul className="pl-4 counter-reset pb-4">
         {items.map((item, index) => (
-          <li key={index} className="mb-1 counter-increment group">
-            <a href={item.href} className="flex items-center no-underline" target="_blank" rel="noopener noreferrer">
+          <li key={index} className="mb-1 counter-increment group p-0.5">
+            <a href={item.href} className="flex items-center no-underline text-sm" target="_blank" rel="noopener noreferrer">
               {/* Counter */}
               <span className="counter text-slate-300 mr-2"></span>
               {/* Text with conditional underline on hover */}
-              <span className="text-slate-600 underline underline-offset-4">{item.text}</span>
+              <span className="text-slate-500 underline underline-offset-4">{item.text}</span>
               {/* Separate span for the arrow to prevent it from being underlined */}
-              <span className="ml-2 text-slate-600 transform rotate-[-45deg] inline-block group-hover:no-underline">→</span>
+              <span className="ml-2 text-slate-500 transform rotate-[-45deg] inline-block group-hover:no-underline">→</span>
             </a>
             {/* Full-width underline for each list item */}
             <div className="absolute bottom-0 left-0 w-full"></div>
