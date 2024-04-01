@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.41.1",
+    "mixpanel-browser": "^2.49.0",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",

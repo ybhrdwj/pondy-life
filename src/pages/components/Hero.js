@@ -13,19 +13,46 @@ const Hero = () => {
   title={shareTitle}
   separator=":: "
   round="true"
-  size={"32px"}> </WhatsappShare>
+  size={"32px"}
+  onClick={() => {
+    // Track the share button click event
+    trackEvent('Share Button Clicked', {
+      platform: 'WhatsApp',
+      url: shareUrl,
+      title: shareTitle,
+    });
+  }}
+> </WhatsappShare>
   <TelegramShare
   url={shareUrl}
   title={shareTitle}
   separator=":: "
   round="true"
-  size={"32px"}> </TelegramShare>
+  size={"32px"}
+   onClick={() => {
+    // Track the share button click event
+    trackEvent('Share Button Clicked', {
+      platform: 'Telegram',
+      url: shareUrl,
+      title: shareTitle,
+    });
+  }}>
+ </TelegramShare>
   <TwitterShare
   url={shareUrl}
   title={shareTitle}
   separator=":: "
   round="true"
-  size={"32px"}> </TwitterShare>  
+  size={"32px"}
+   onClick={() => {
+    // Track the share button click event
+    trackEvent('Share Button Clicked', {
+      platform: 'Twitter',
+      url: shareUrl,
+      title: shareTitle,
+    });
+  }}>
+</TwitterShare>  
     </div> 
     </div>
   );

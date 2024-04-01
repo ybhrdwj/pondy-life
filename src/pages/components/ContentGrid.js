@@ -19,6 +19,8 @@ export default function ContentGrid({ title, emoji, items = [] }) {
           <li key={index} className="mb-1 counter-increment group p-0.5">
             <a 
               href={item.url} 
+              onClick={() => trackEvent('Link Clicked', { name: item.name, url: item.url })}
+
               className="flex items-center no-underline text-sm" 
               target="_blank" 
               rel="noopener noreferrer"
