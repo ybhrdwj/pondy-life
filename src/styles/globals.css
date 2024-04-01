@@ -31,6 +31,7 @@ html, body {
 }
 body {
   background-color: white;
+  
 }
 /* Initialize the counter */
 .counter-reset {
@@ -50,4 +51,5 @@ body {
   /* Ensure counters do not interfere with clickability */
   pointer-events: none;
 }
+
 
