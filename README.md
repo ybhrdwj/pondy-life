@@ -1,40 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[pondy.life](https://pondy.life) — find everything about pondicherry in one place, without getting lost on google.
 
-## Getting Started
+Built using — NextJS + TailwindCSS and Supabase
 
-First, run the development server:
+How the code is structured:
+1. ContentGrid.js — this file is how the card where the recommendations are displayed
+2. Hero.js — here the banner, headline and sharing buttons live
+3. Header.js & Footer.js — self explanatory top and bottom most sections of the site
+4. Index.js — where everything is put together, here there is a function called as loadData that connects with the Supabase client to populate the data.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+How to make your own recommendations page by forking this/cloning this in your page editor
+create a .env.local file and add these variables
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+ 
+    NEXT_PUBLIC_SUPABASE_URL=YourURLHere 
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=YourKeyHere   
+     NEXT_PUBLIC_MIXPANEL_TOKEN=Your_Token
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+You can get the first two from your free [Supabase](https://supabase.com/) account and creating your table. There are two tables
+1. categories: id | category_name | emoji
+2. items: item_id | name | url | relation
+3. the relation colummn should be a foriegn key relation which is basically connecting a category to each item.
+4. Don't forget to set policies to "SELECT" for both the tables in supabase.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+For [Mixpanel](https://mixpanel.com) you can create a free account and get your token from there.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+How to deploy. I used vercel for this
+1. You'll need to add your enviroment variables in the settings page on your app to make sure everything works and isn't leaked
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Package shoutouts: [react-share-kit](https://github.com/ayda-tech/react-share-kit) 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Please reachout to me via twitter [ybhrdwj](https://x.com/ybhrdwj) or email me at yb@yashbhardwaj.com
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Don't forget to have fun!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
